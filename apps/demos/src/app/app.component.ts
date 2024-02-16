@@ -21,7 +21,7 @@ import { AnimationOptions, BMDestroyEvent, LottieComponent, LottieTransferState 
 export class AppComponent implements AfterViewChecked {
   options!: AnimationOptions;
 
-  shown = true;
+  shown = false;
 
   styles: Partial<CSSStyleDeclaration> = {
     margin: '0 auto',

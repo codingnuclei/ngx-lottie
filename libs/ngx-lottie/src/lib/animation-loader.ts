@@ -39,7 +39,7 @@ export class AnimationLoader {
     mergeMap(player => raf$(this.ngZone).pipe(map(() => player))),
   );
 
-  private ngZone = inject(NgZone);
+  protected ngZone = inject(NgZone);
 
   loadAnimation(
     options: AnimationConfigWithData | AnimationConfigWithPath,
@@ -66,6 +66,8 @@ export class AnimationLoader {
     player: LottiePlayer,
     options: AnimationConfigWithData | AnimationConfigWithPath,
   ): AnimationItem {
+    console.log(options);
+
     return this.ngZone.runOutsideAngular(() => player.loadAnimation(options));
   }
 }
